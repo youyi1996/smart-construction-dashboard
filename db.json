@@ -1,0 +1,20 @@
+{
+  "materials": [
+    {
+      "name": "Sand",
+      "color": "#5c5b38",
+      "volume": "1520",
+      "cost": "0.19",
+      "deliveryDate": "2020-12-17",
+      "id": 2
+    },
+    {
+      "name": "Brick",
+      "color": "#d73c3c",
+      "volume": "123",
+      "cost": "22.49",
+      "deliveryDate": "2023-02-08",
+      "id": 3
+    }
+  ]
+}
