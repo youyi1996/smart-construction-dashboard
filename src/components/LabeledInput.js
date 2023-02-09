@@ -1,6 +1,8 @@
 import ColorPicker from "./ColorPicker"
 import "./LabeledInput.css"
 
+
+/// A container that includes a <input> component and a label showing text.
 export default function LabeledInput({ value, type, label, placeholder, onChange=undefined }) {
 
     if (type === "color") {

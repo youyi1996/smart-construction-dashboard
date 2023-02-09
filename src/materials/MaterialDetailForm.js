@@ -3,6 +3,8 @@ import LabeledInput from "../components/LabeledInput"
 import { useState } from "react"
 import { RoundedButton } from "../components/RoundedButton";
 
+
+/// A form that shows the detailed data of a Material.
 export default function MaterialDetailForm ({currentMaterial, updateMaterial}) {
 
     const [name, setName] = useState(currentMaterial.name);

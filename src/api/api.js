@@ -1,3 +1,6 @@
+/// Async HTTP requests that communicate with the server to get, create, update and delete date.
+
+/// Change this if using a different backend server.
 const API_ENDPOINT = "http://localhost:3001/";
 
 export async function apiGetAllMaterials() {

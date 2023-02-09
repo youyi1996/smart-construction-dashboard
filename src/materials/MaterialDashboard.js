@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react"
 import { apiAddMaterial, apiDeleteMaterial, apiGetAllMaterials, apiUpdateMaterial } from "../api/api";
 import Card from "../components/Card"
-import LabeledInput from "../components/LabeledInput";
 import { RoundedButton } from "../components/RoundedButton"
 import "./MaterialDashboard.css"
 import MaterialDetailForm from "./MaterialDetailForm";
 
+
+// Main Page for Material Management
 export default function MaterialDashboard() {
 
     const [materials, setMaterials] = useState([]);
@@ -17,13 +18,13 @@ export default function MaterialDashboard() {
 
     useEffect(()=>{
         if (currentMaterial) {
-            console.log("enter second useeffect");
+            console.log("c", currentMaterial, materials);
             setCurrentMaterial(
-                materials.find(({id})=>id===currentMaterial.id)
+                materials.find(({id})=>id===currentMaterial.id) // to make it stay on the material that has been updated.
             )
         }
 
-    }, [materials, currentMaterial])
+    }, [materials])
 
 
     function loadAllMaterials() {
@@ -52,7 +53,9 @@ export default function MaterialDashboard() {
             deliveryDate: `${strYear}-${strMonth}-${strDate}`,
         }
 
-        apiAddMaterial(newMaterial).then(()=>{
+        apiAddMaterial(newMaterial).then((material)=>{
+            console.log(material);
+            setCurrentMaterial(material);
             loadAllMaterials();
         });
 

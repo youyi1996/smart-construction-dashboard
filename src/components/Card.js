@@ -1,6 +1,6 @@
 import "./Card.css"
-import { SketchPicker } from 'react-color';
 
+/// A React component that shows data in a card-like container.
 export default function Card({ name, description, color, selected=false, onClick=null }) {
     
     const avatarStyle = {

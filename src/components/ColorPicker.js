@@ -1,7 +1,10 @@
 import { useRef } from "react"
 import "./ColorPicker.css"
 
-export default function ColorPicker({ color, readonly=false, onChange }) {
+
+/// A component that shows the current color in a circle, and pop out the color picker when being clicked.
+/// Supported by modern web browsers. Outdated ones may not.
+export default function ColorPicker({ color, onChange }) {
 
     const ref = useRef();
 
@@ -9,13 +12,8 @@ export default function ColorPicker({ color, readonly=false, onChange }) {
         backgroundColor: color,
     }
 
-    function showColorPicker() {
-        // console.log(ref);
-        // ref.current.click();
-    }
-
     return (
-        <div className="color-picker" style={containerStyle} onClick={showColorPicker}>
+        <div className="color-picker" style={containerStyle}>
             <input ref={ref} type={"color"} value={color} onChange={onChange}></input>
         </div>
     )
